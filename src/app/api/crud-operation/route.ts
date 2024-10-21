@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 //simple Methods
 
 export async function GET(request: Request) {
-  const users = await db.select().from(Todo);
+  const users = await db.select().from(Todo).orderBy("asc");
   return NextResponse.json(users);
 }
 

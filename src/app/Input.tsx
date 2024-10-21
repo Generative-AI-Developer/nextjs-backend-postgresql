@@ -1,4 +1,5 @@
 "use client";
+import router from "next/router";
 import React, { useEffect, useState } from "react";
 
 const Input = ({ obj }: any) => {
@@ -33,22 +34,21 @@ const Input = ({ obj }: any) => {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-
     setTitle("");
   };
 
-  const handleDelete = async () => {
-    // DELETE request using fetch()
-    fetch("http://localhost:3000/api/crud-operation", {
-      method: "DELETE",
-      body: JSON.stringify({ title, id }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-    setTitle("");
-    setId("");
-  };
+  // const handleDelete = async () => {
+  //   // DELETE request using fetch()
+  //   fetch("http://localhost:3000/api/crud-operation", {
+  //     method: "DELETE",
+  //     body: JSON.stringify({ title, id }),
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //     },
+  //   });
+  //   setTitle("");
+  //   setId("");
+  // };
 
   useEffect(() => {
     setTitle(obj.title);
@@ -69,11 +69,13 @@ const Input = ({ obj }: any) => {
       </div>
       <div>
         {!id && <button onClick={handlePost}>Add</button>}
-        {id && <button onClick={handleUpdate}>Edit</button>}
-        <button onClick={handleDelete}>Delete</button>
+        {id && <button onClick={handleUpdate}>Update</button>}
       </div>
     </>
   );
 };
 
 export default Input;
+function refresh() {
+  throw new Error("Function not implemented.");
+}
