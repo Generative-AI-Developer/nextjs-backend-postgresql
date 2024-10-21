@@ -59,7 +59,7 @@ const Input = ({ obj }: any) => {
     <>
       <div>
         <input
-          className="border border-collapse my-6 rounded-lg text-black py-2 px-8"
+          className="border border-collapse rounded-lg text-black py-2 px-20"
           placeholder="Enter User Name"
           type="text"
           value={title}
@@ -68,14 +68,29 @@ const Input = ({ obj }: any) => {
         <br />
       </div>
       <div>
-        {!id && <button onClick={handlePost}>Add</button>}
-        {id && <button onClick={handleUpdate}>Update</button>}
+        <div>
+          {!id && (
+            <button
+              onClick={handlePost}
+              className="bg-red-800 w-20 rounded-lg px-6 py-2 my-4 flex align-center"
+            >
+              Add
+            </button>
+          )}
+        </div>
+        <div>
+          {id && (
+            <button
+              onClick={handleUpdate}
+              className="bg-blue-400 w-20 rounded-lg px-6 py-2 text-white mt-6"
+            >
+              Update
+            </button>
+          )}
+        </div>
       </div>
     </>
   );
 };
 
 export default Input;
-function refresh() {
-  throw new Error("Function not implemented.");
-}
