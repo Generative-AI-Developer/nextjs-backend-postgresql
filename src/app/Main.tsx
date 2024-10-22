@@ -25,15 +25,23 @@ const Main = ({ data }: any) => {
           return (
             <>
               <div key={val.id} className="w-[350px] flex justify-between">
-                <p className="w-28">{val.title}</p>
-                <button onClick={() => setObj(val)} className="w-28">
-                  Edit
-                </button>
-                <button onClick={() => handleDelete(val.id)} className="w-28 ">
-                  Delete
-                </button>
+                <div className="flex justify-center items-center gap-6">
+                  <p className="w-28">{val.title}</p>
+                  <button
+                    onClick={() => setObj(val)}
+                    className="w-28 bg-green-800 rounded-lg px-6 py-2 my-4 flex align-center"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(val.id)}
+                    className="w-28 bg-red-800 rounded-lg px-6 py-2 my-4 flex align-center "
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
-              <hr className="my-4 " />
+              <hr className="my-2 " />
             </>
           );
         })}

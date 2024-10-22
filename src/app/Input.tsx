@@ -1,5 +1,4 @@
 "use client";
-import router from "next/router";
 import React, { useEffect, useState } from "react";
 
 const Input = ({ obj }: any) => {
@@ -57,22 +56,22 @@ const Input = ({ obj }: any) => {
 
   return (
     <>
-      <div>
-        <input
-          className="border border-collapse rounded-lg text-black py-2 px-20"
-          placeholder="Enter User Name"
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <br />
-      </div>
-      <div>
+      <div className="flex flex-col justify-center items-center gap-2">
+        <div>
+          <input
+            className="border border-collapse rounded-lg text-black py-2 px-24"
+            placeholder="Enter Task"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+
         <div>
           {!id && (
             <button
               onClick={handlePost}
-              className="bg-red-800 w-20 rounded-lg px-6 py-2 my-4 flex align-center"
+              className="bg-[#b2bdc5] rounded-lg py-2 my-4 flex px-44"
             >
               Add
             </button>
@@ -82,7 +81,7 @@ const Input = ({ obj }: any) => {
           {id && (
             <button
               onClick={handleUpdate}
-              className="bg-blue-400 w-20 rounded-lg px-6 py-2 text-white mt-6"
+              className="bg-[#18496d] rounded-lg py-2 my-4 flex px-44"
             >
               Update
             </button>
